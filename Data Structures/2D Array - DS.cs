@@ -10,8 +10,8 @@ class Solution {
            string[] arr_temp = Console.ReadLine().Split(' ');
            arr[arr_i] = Array.ConvertAll(arr_temp,Int32.Parse);
         }
-        int largestsum = -9;
-        int compare = -9;
+        int largestsum = -63;           //Total of seven elements in an hourglass, max size of 9 for any given element
+        int compare = -63;              //therefore -9*7 = -63 as the lowest possible value. 
 
         //Build an array for each hourglass. 
         int[] arr_hourglass = new int[7];
@@ -29,15 +29,16 @@ class Solution {
                 arr_hourglass[6] = arr[i+2][j+2];
 
                 compare = arr_hourglass.Sum();
-                // Console.Write("Array {0}: {1} \n",i, compare);
-                if(compare > largestsum)
+
+                if(compare > largestsum)         //Finds the largest sum from each hourglass.
                 {
                     largestsum = compare;
                 }
+                // Console.Write("Array {0}: {1} \n",i, compare); //Used to test sum for each given hourglass                
             }
         }
-        // Console.WriteLine();
+        // Console.WriteLine();                 //Lists output for test cases
         Console.WriteLine(largestsum);
-        //Find largest sum from each hourglass.
+
     }
 }
