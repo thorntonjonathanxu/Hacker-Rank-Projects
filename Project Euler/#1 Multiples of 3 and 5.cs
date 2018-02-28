@@ -21,6 +21,8 @@ class Solution {
             five = (n-1)/5;
             fifteen = (n-1)/15;     //Need to find all multiples of the product of 3 and 5 = 15 and exlcude from the final sum.
 
+
+            //AP Method to solve for Multiples. O(1)
             //Sum all products of 3 and 5 and exlcude all multiples of 15.
             //For each multiple, take the product of the Multiple * (Total Possible Multiples) * (Total Possible Mutliples)/2
             sum = 3*(three*(three+1)/2)+5*(five*(five+1)/2)-15*(fifteen*(fifteen+1)/2);
