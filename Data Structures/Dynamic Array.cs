@@ -17,6 +17,7 @@ class Solution {
         }
 
         int lastAnswer = 0;
+        int [] seq;
 
 
 
@@ -24,8 +25,8 @@ class Solution {
         Console.WriteLine("N: {0} Q: {1}", n, q);
     }
     
-    public void query_One(int n, int x, int lastAnswer)
+    public void query_One(int n, int lastAnswer, int x, int y)
     {
-        
+        seq = (x ^ lastAnswer) % n;
     }
 }
