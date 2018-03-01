@@ -1,4 +1,5 @@
-//Completed 02/27/2018
+//In progress 03/01/2018
+//List outputs break with long formatting.
 
 
 using System;
@@ -11,25 +12,38 @@ class Solution {
         int[] arr = Array.ConvertAll(arr_input,Int32.Parse);
         int n = arr[0];
         int q = arr[1];
-
-        int[][] arr_queries = new int[6][];
-        for(int arr_i = 0; arr_i < 6; arr_i++)
-        {
-            string[] arr_temp = Console.ReadLine().Split(' ');
-            arr_queries[arr_i] = Array.ConvertAll(arr_temp,Int32.Parse);
-        }
-
         int lastAnswer = 0;
-        int [] seq;
+        List <int> seq0 = new List<int>();
+        List <int> seq1 = new List<int>();
 
-
-
-
-        Console.WriteLine("N: {0} Q: {1}", n, q);
-    }
-    
-    public void query_One(int n, int lastAnswer, int x, int y)
-    {
-        seq = (x ^ lastAnswer) % n;
+        for(int arr_i = 0; arr_i < q; arr_i++)
+        {
+            arr_input = Console.ReadLine().Split(' ');
+            arr = Array.ConvertAll(arr_input,Int32.Parse);
+            if(arr[0]==1)
+            {
+                if((arr[1] ^ lastAnswer) % n == 0)
+                {
+                    seq0.Add(arr[2]);
+                }
+                else
+                {
+                    seq1.Add(arr[2]);
+                }
+            }
+            if(arr[0]== 2)
+            {
+                if((arr[1] ^ lastAnswer) % n == 0)
+                {                    
+                    lastAnswer = seq0[(arr[2] % seq0.Count)];                  
+                    Console.WriteLine(seq0[lastAnswer]);
+                }
+                else
+                {
+                    lastAnswer = seq1[(arr[2] % seq1.Count)];
+                    Console.WriteLine(seq1[lastAnswer]);
+                }
+            }
+        }
     }
 }
