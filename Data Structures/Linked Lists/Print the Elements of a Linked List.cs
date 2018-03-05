@@ -1,11 +1,15 @@
-// //       Print elements of a linked list on console
-// //       head pointer input could be NULL as well for empty list
-// //       Node is defined as
-      // class Node {
-      //    int Data;
-      //    Node Next;
-      // }
-   
+/* Completed 3/4/2018
+
+*/
+
+//   Print elements of a linked list on console
+//   head pointer input could be NULL as well for empty list
+//   Node is defined as
+//   class Node {
+//      int Data;
+//      Node Next;
+//   }
+
 
     // This is a "method-only" submission.
     // You only need to complete this method.
